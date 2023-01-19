@@ -1,4 +1,4 @@
 package com.example.TeamNA;
 
-public class ChatRepo {
+public class BlogPostRepo {
 }
