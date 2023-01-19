@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>blogPost</title>
 </head>
 <body>
+<h1> Write your totally awesome blogpost here!</h1>
+<form action="/blogpost"  method="POST">
 
+    Blogpost: <input type="text" th:field="*{text}" placeholder="Write your blogpost here!">
+    <br>
+    Author: <input type="text" th:field="*{author}" placeholder="What is your name?">
+    <br>
+            <input type="submit" value="Save blogpost">
+</form>
 </body>
 </html>
