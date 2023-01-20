@@ -24,5 +24,20 @@
         </ul>
     </div>
 </nav>
+
+<h1>Current users</h1>
+<br />
+<div>
+    <div th:each="user : ${users}">
+        <a th:href="'/users' + ${user.getUserName}">
+            <h2 th:text="${user.getUserName}"></h2>
+        </a>
+        <p th:text="'First name: ' + ${user.getFirstName}"></p>
+        <p th:text="'Last name: ' + ${user.getLastName}"></p>
+        <p th:text="'Email: ' + ${user.getEmail}"></p>
+        <hr />
+    </div>
+</div>
+
 </body>
 </html>

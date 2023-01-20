@@ -29,6 +29,8 @@ public class UserController {
         return "users";
     }
 
+
+
     @GetMapping("/createUser")
     public String create(Model model, User user) {
         model.addAttribute("user", user);
