@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,15 +30,16 @@ public class UserController {
         return "users";
     }
 
-
-
     @GetMapping("/createUser")
     public String create(Model model, User user) {
         model.addAttribute("user", user);
         return "createUser";
     }
 
-
+    @PostMapping("/createUser")
+    public User createUser (@Valid @RequestBody User user) {
+        return userRepo.addUser(user);
+    }
 
     @DeleteMapping("/{username}")
     public User delete (@PathVariable String username) {

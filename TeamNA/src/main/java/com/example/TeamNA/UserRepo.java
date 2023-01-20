@@ -33,7 +33,7 @@ public class UserRepo {
     }
 
     // add a user
-    public User addBook(User user) {
+    public User addUser(User user) {
         User lastBook = users.get(users.size()-1);
         user.setUsername(lastBook.getUsername()+1); // set an UserName on the new user, should be unique, will be done by the database in future exercises
         users.add(user);
