@@ -13,9 +13,6 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/">Main page</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="blogPost">BlogPost</a>
             </li>
             <li class="nav-item">
@@ -29,15 +26,16 @@
 </nav>
 
 <h1> Write your totally awesome blogpost here!</h1>
+<br/>
 <form action="/createBlogpost" th:object="${BlogPost}"  method="POST">
     Blogpost:
-    <br>
+    <br/>
     <textarea rows="10" cols="20" placeholder="Write your blogpost here"></textarea>
-    <br>
+    <br/>
     Author:
-    <br>
+    <br/>
     <input type="text" placeholder="What is your name?">
-    <br>
+    <br/>
             <input type="submit" value="Save blogpost">
 </form>
 </body>
