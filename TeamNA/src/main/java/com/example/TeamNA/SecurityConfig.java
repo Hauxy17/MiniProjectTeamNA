@@ -17,12 +17,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
-//                .antMatchers("/admin").hasRole("ADMIN")
+                .antMatchers("/", "/createUser").permitAll()
+                .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-//                .formLogin().defaultSuccessUrl("/secret", true)
-                .formLogin().loginPage("/forum")
+                .formLogin().defaultSuccessUrl("/forum", true)
+//                .formLogin().loginPage("/createUser")
                 .permitAll();
     }
 

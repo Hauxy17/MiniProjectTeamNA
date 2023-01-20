@@ -35,9 +35,12 @@ public class UserController {
         return "createUser";
     }
 
-    @DeleteMapping("/{username}")
-    public User delete (@PathVariable String username) {
-        // userRepo.deleteUser(username);
-        return null;
-    }
+
+
+
+//    @DeleteMapping("/{username}")
+//    public User delete (@PathVariable String username) {
+//        userRepo.deleteUser(username);
+//        return null;
+//    }
 }
