@@ -7,4 +7,7 @@ public class BlogPostRepo {
 
     List<BlogPost> blogPosts = new ArrayList<>();
 
+    public List<BlogPost> getBlogPosts() {
+        return blogPosts;
+    }
 }

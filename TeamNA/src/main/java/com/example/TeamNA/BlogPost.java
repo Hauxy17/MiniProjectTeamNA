@@ -1,6 +1,7 @@
 package com.example.TeamNA;
 
 import jakarta.validation.constraints.Size;
+import org.springframework.context.annotation.Bean;
 
 public class BlogPost {
     @Size(min=1,max=300)
