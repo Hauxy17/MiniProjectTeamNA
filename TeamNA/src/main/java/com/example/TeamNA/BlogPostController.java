@@ -7,10 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.List;
+
+import static java.awt.SystemColor.text;
 
 @Controller
 public class BlogPostController {
@@ -28,14 +32,12 @@ public class BlogPostController {
     }
 
     @PostMapping ("/createBlogpost")
-    public String setBlogPost(@Valid Model model, BlogPost blogPost, BindingResult bindingResult, List<BlogPost> blogPosts){
+    public String setBlogPost(@Valid @ModelAttribute BlogPost blogPost, Model model, String author, String text, BindingResult bindingResult, List<BlogPost> blogPosts){
         if(bindingResult.hasErrors()){
-            return "/blogPost";
+            return "/blogpost";
         }
-        model.addAttribute( "text", blogPost.getText());
-        model.addAttribute("author", blogPost.getAuthor());
-
-        blogPosts.add(blogPost);
+        model.addAttribute(blogPost = new BlogPost(text, author));
+        model.addAttribute(blogPosts.add(blogPost));
         return "/forum";
     }
 

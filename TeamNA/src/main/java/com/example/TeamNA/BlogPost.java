@@ -1,8 +1,10 @@
 package com.example.TeamNA;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Size;
+import java.util.List;
 
 public class BlogPost {
     @Size(min=1,max=300)
