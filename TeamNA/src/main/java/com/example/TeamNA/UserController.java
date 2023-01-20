@@ -36,10 +36,10 @@ public class UserController {
         return "createUser";
     }
 
-    @PostMapping("/createUser")
-    public User createUser (@Valid @RequestBody User user) {
-        return userRepo.addUser(user);
-    }
+//    @PostMapping("/createUser")
+//    public User createUser (@Valid @RequestBody User user) {
+//        return userRepo.addUser(user);
+//    }
 
     @DeleteMapping("/{username}")
     public User delete (@PathVariable String username) {
