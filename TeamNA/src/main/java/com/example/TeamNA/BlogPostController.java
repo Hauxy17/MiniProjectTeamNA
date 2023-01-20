@@ -30,7 +30,6 @@ public class BlogPostController {
     public String forum() {
         return "forum";
     }
-
     @PostMapping ("/createBlogpost")
     public String setBlogPost(@Valid @ModelAttribute BlogPost blogPost, Model model, String author, String text, BindingResult bindingResult, List<BlogPost> blogPosts){
         if(bindingResult.hasErrors()){
