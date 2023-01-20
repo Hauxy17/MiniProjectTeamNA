@@ -37,7 +37,7 @@ public class UserController {
 
     @DeleteMapping("/{username}")
     public User delete (@PathVariable String username) {
-        userRepo.deleteUser(username);
+        // userRepo.deleteUser(username);
         return null;
     }
 }

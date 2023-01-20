@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
 //                .formLogin().defaultSuccessUrl("/secret", true)
-                .formLogin().loginPage("/login")
+                .formLogin().loginPage("/forum")
                 .permitAll();
     }
 

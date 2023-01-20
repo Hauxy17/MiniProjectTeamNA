@@ -22,6 +22,11 @@ public class BlogPostController {
         return "/blogPost";
     }
 
+    @GetMapping("/forum")
+    public String forum() {
+        return "forum";
+    }
+
     @PostMapping ("/createBlogpost")
     public String setBlogPost(@Valid Model model, BlogPost blogPost, BindingResult bindingResult, List<BlogPost> blogPosts){
         if(bindingResult.hasErrors()){
@@ -33,4 +38,5 @@ public class BlogPostController {
         blogPosts.add(blogPost);
         return "/forum";
     }
+
 }
