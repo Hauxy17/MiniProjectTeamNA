@@ -1,6 +1,6 @@
 package com.example.TeamNA;
 
-import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -21,8 +22,8 @@ public class BlogPostController {
         return "/blogPost";
     }
 
-    @PostMapping ("/blogpost")
-    public String setBlogPost(@Valid Model model, BlogPost blogPost, BindingResult bindingResult, List blogPosts){
+    @PostMapping ("/createBlogpost")
+    public String setBlogPost(@Valid Model model, BlogPost blogPost, BindingResult bindingResult, List<BlogPost> blogPosts){
         if(bindingResult.hasErrors()){
             return "/blogPost";
         }
@@ -32,6 +33,4 @@ public class BlogPostController {
         blogPosts.add(blogPost);
         return "/forum";
     }
-
-
 }
