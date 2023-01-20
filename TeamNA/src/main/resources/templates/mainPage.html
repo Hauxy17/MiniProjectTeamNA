@@ -2,14 +2,15 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>MainPage</title>
+  <title>Main Page</title>
 </head>
 <body>
 <h1>Loose your snus</h1>
 <br/>
 <h2>Login here</h2>
 <div>
-  <form th:action="@{/}", method="post">
+  <form action="/" method="post">
+<!--  <form th:action="@{/}" method="post">-->
 
     Username:
     <input type="text" name="username">
@@ -27,8 +28,9 @@
 <br/>
 <h2>Create new user</h2>
 <div>
-  <form action="@{/createUser}" method="post">
-    <input type="submit" value="Click here">
+<!--  <form action="@{/createUser}" method="post">-->
+  <form action="/createUser" method="post">
+    <input type="submit" value="Click here" a href="createUser" />
   </form>
 </div>
 
