@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>MainPage</title>
+</head>
+<body>
+<h1>Loose your snus</h1>
+<br/>
+<h2>Login here</h2>
+<div>
+  <form th:action="@{/}", method="post">
+
+    Username:
+    <input type="text" name="username">
+
+    Password:
+    <input type="password" name="password">
+    <div th:if="${param.error}">
+      <i>* Invalid username and/or password.</i>
+    </div>
+    <br>
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+<br/>
+<h2>Create new user</h2>
+<div>
+  <form action="@{/createUser}" method="post">
+    <input type="submit" value="Click here">
+  </form>
+</div>
+
+</body>
+</html>
